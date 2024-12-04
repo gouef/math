@@ -1,4 +1,4 @@
-module github.com/Gouef/math
+module github.com/gouef/math
 
 go 1.23.2
 

@@ -2,6 +2,10 @@ package math
 
 import "math"
 
+func Max(x int, y int) int {
+	return int(math.Max(float64(x), float64(y)))
+}
+
 func Power(base, exponent float64) float64 {
 	return math.Pow(base, exponent)
 }
