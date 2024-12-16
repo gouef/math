@@ -11,8 +11,17 @@ func Power(base, exponent float64) float64 {
 }
 
 func RoundTo(number float64, places int) float64 {
-	c := Power(10, float64(places))
-	return math.Round(number/c) * c
+	if places == 0 {
+		return math.Round(number)
+	}
+
+	if places > 0 {
+		power := math.Pow(10, float64(places))
+		return math.Round(math.Round(number)/power) * power
+	}
+
+	c := math.Pow(10, float64(-places))
+	return math.Round(number*c) / c
 }
 
 func RoundHundreds(number float64) float64 {
